@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management Dashboard UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <style>
+      .navbar-dark .navbar-brand {
+          color: #fff;
+          text-shadow: 0 0 10px rgba(173, 216, 230, 0.8), 0 0 20px rgba(173, 216, 230, 0.8), 0 0 30px rgba(173, 216, 230, 0.8);
+      }
+
+      .navbar-dark .navbar-toggler-icon {
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(173, 216, 230, 0.8), 0 0 20px rgba(173, 216, 230, 0.8), 0 0 30px rgba(173, 216, 230, 0.8);
+      }
+
+      .navbar-dark .navbar-nav .nav-link.active {
+          color: #fff;
+          text-shadow: 0 0 10px rgba(173, 216, 230, 0.8), 0 0 20px rgba(173, 216, 230, 0.8), 0 0 30px rgba(173, 216, 230, 0.8);
+      }
+        .logo img {
+            width: 100px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            border-radius: 50%; /* Make it a circle */
+            margin-bottom: 10px; /* Add some margin for spacing */
+        }
+        .calendar-container {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .current-date {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #small-calendar {
+            width: 232px; /* Adjust the width as needed */
+            font-size: 13px; /* Adjust the font size as needed */
+            background-color: #ffc0cb; /* Baby pink color */
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin: 0 auto;
+        }
+     
+  </style>
+    
+    <!-- js code  for setting calender -->
+    <script>
+      $(document).ready(function () {
+          // Initialize small calendar
+          $("#small-calendar").datepicker({
+              showOtherMonths: true,
+              selectOtherMonths: true,
+              dateFormat: "yy-mm-dd",
+              onSelect: function (dateText) {
+                  // Update the current date when a date is selected
+                  $('#current-date').text(moment(dateText, 'YYYY-MM-DD').format('MMMM D, YYYY'));
+              }
+          });
+
+          // Set the initial current date
+          $('#current-date').text(moment().format('MMMM D, YYYY'));
+      });
+  </script>
+
+  </head>
+  <body>
+
+    <div class="task-manager">
+
+      <!-- left bar starts from here-->
+      
+      <div class="left-bar">
+        <div class="upper-part">
+          <div class="actions">
+            <div class="circle"></div>
+            <div class="circle-2"></div>
+          </div>
+        </div>
+
+        <!-- left content starts -->
+        <div class="left-content">
+          <ul class="action-list">
+
+            <div class="container">
+              <div class="side-menu">
+
+                <!-- for logo  -->
+
+                <div class="logo">
+                      <img src="Pink Watercolour Flower Shop Logo (1).png" alt="Taskify Logo">
+                  </div>
+   
+   <!--  for space --> 
+            <br>
+
+    <!-- for adding link text(add_task, update_task, delete_task) in side bar -->
+
+            <li class="item">
+              <img class="feather feather-star" src="svg/star.svg" alt="" />
+              <a class="nav-link" href="AddTask.html">Add_Task</a>
+            </li>
+
+            
+            <li class="item">
+              <img class="feather feather-hash" src="svg/hash.svg" alt="" />
+              <a class="nav-link" href="UpdateTask.html">Update_Task</a>
+            </li>
+
+
+            
+            <li class="item">
+                <img class="feather feather-hash" src="svg/hash.svg" alt="" />
+                <a class="nav-link" href="ShowTasks.html">Show_Task</a>
+              </li>
+              
+              <li class="item">
+                <img class="feather feather-hash" src="svg/hash.svg" alt="" />
+                <a class="nav-link" href="DeleteTask.html">Delete_Task</a>
+              </li>
+
+          </ul>
+
+        </div>
+
+        <!-- left content ends -->
+
+        
+        <video width="100%" height="auto" autoplay muted loop>
+          <source src="Green Simple Manager LinkedIn Banner.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      </div>
+
+      <!-- left bar ends hereeee......-->
+
+      <!-- Code for page ceneter starts -->
+
+<div class="conatiner p-5">
+
+      <!-- banner -->
+
+  <video width="100%" height="auto" autoplay muted loop>
+    <source src="Green Simple Manager LinkedIn Banner.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- table -->
+<img src="Champagne Blue Pastel PC Setup Comic Style Organizer Desktop Wallpaper .png.crdownload" alt="" width="100%" height="auto">
+
+
+</div>
+
+<!-- table ends-->
+
+      <!-- page content ends -->
+
+      <!-- right bar starts here......... -->
+      <div class="right-bar">
+       
+        <!-- for side small circle with t sign -->
+
+        <div class="top-part">
+          <img class="feather feather-users" src="svg/users.svg" alt="" />
+          <div class="count">T</div>
+        </div>
+        
+        <!-- for adding calendedr -->
+
+        <div class="calendar-container">
+          <div class="header"><strong>Today's Date</strong></div>
+          <br>
+          <div id="small-calendar"></div>
+      </div>
+
+      <!-- schedule part -->
+
+        <div class="header"><strong>Schedule</strong></div>
+        <div class="right-content">
+
+          <!-- 1st task box -->
+
+          <div class="task-box yellow">
+            <div class="description-task">
+              <div class="time">08:00 - 09:00 AM</div>
+              <div class="task-name">Product Review</div>
+            </div>
+
+            <div class="more-button"></div>
+            <div class="members">
+              <img src="images/img1.jpg" alt="member" />
+              <img src="images/img2.jpg" alt="member-2" />
+              <img src="images/img3.jpg" alt="member-3" />
+              <img src="images/img4.jpg" alt="member-4" />
+              <img src="images/img4.jpg" alt="member-5" />
+            </div>
+          </div>
+
+         <!-- 2nd task box -->
+         
+          <div class="task-box blue">
+            <div class="description-task">
+              <div class="time">10:00 - 11:00 AM</div>
+              <div class="task-name">Design Meeting</div>
+            </div>
+            <div class="more-button"></div>
+            <div class="members">
+              <img src="images/img5.jpg" alt="member" />
+              <img src="images/img6.jpg" alt="member-2" />
+              <img src="images/img7.jpg" alt="member-3" />
+              <img src="images/img4.jpg" alt="member-5" />
+
+
+            </div>
+          </div>
+        
+          <!-- 3rd task box -->
+    
+          <div class="task-box red">
+            <div class="description-task">
+              <div class="time">01:00 - 02:00 PM</div>
+              <div class="task-name">Team Meeting</div>
+            </div>
+            <div class="more-button"></div>
+            <div class="members">
+              <img src="images/img1.jpg" alt="member" />
+              <img src="images/img2.jpg" alt="member-2" />
+              <img src="images/img3.jpg" alt="member-3" />
+              <img src="images/img4.jpg" alt="member-4" />
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- right bar ends -->
+    
+    </div>
+  </body>
+ 
+</html>
+
+
+
+  `
